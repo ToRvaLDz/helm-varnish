@@ -21,12 +21,12 @@ spec:
                 path: default.vcl
       containers:
       - name: varnish
-        image: tripviss/varnish
+        image: cooptilleuls/varnish
         env:
         - name: VARNISH_VCL
-          value: /etc/varnish/default.vcl
+          value: /usr/local/etc/varnish/default.vcl
         volumeMounts:
           - name: varnish-config
-            mountPath: /etc/varnish/
+            mountPath: /usr/local/etc/varnish/
         ports:
         - containerPort: 80

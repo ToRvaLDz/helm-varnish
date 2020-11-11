@@ -3,7 +3,8 @@
 ##
 image:
   registry: docker.io
-  repository: tripviss/varnish
+  repository: cooptilleuls/varnish
+
   tag: latest
   ## Specify a imagePullPolicy
   ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
@@ -19,17 +20,17 @@ image:
 
 ## Varnish default backend service/fqdn/IP if not defined in config/varnish.vcl
 ##
-# varnishBackendService:
+varnishBackendService: 10.28.2.4
 
 ## loadBalancerIP for the Magento Service (optional, cloud specific)
 ## ref: http://kubernetes.io/docs/user-guide/services/#type-loadbalancer
 ##
-# magentoLoadBalancerIP:
+#magentoLoadBalancerIP: 10.28.10.240
 
 ## Kubernetes configuration
 ## For minikube, set this to NodePort, elsewhere use LoadBalancer
 ##
-serviceType: LoadBalancer
+serviceType: ClusterIP
 
 ## Configure resource requests and limits
 ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
