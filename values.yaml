@@ -30,12 +30,12 @@ varnishBackendService: 10.28.2.4
 ## Kubernetes configuration
 ## For minikube, set this to NodePort, elsewhere use LoadBalancer
 ##
-serviceType: ClusterIP
+serviceType: NodePort
 
 ## Configure resource requests and limits
 ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
 ##
 resources:
   requests:
-    memory: 2048Mi
+    memory: 4096Mi
     cpu: 900m
