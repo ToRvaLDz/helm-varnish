@@ -8,8 +8,6 @@ metadata:
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
     host: "{{ include "varnish.host" .}}"
-  annotations:
-    traefik.ingress.kubernetes.io/service.sticky.cookie: "true"
 spec:
   type: {{ .Values.serviceType }}
   {{- if eq .Values.serviceType "LoadBalancer" }}
